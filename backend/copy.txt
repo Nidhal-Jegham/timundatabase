@@ -1,0 +1,44 @@
+---Getting events data---
+useEffect({
+    fetch("http://localhost:3200/events", {
+        method: "GET"
+        })
+        .then(res => {
+            setEvents(res)
+        })
+        .catch(err => console.log(err));
+},[]);
+
+---Getting articles data---
+useEffect({
+    fetch("http://localhost:3200/articles", {
+        method: "GET"
+        })
+        .then(res => {
+            setArticles(res)
+        })
+        .catch(err => console.log(err));
+},[]);
+
+---Getting study guides data---
+useEffect({
+    fetch("http://localhost:3200/sguides", {
+        method: "GET"
+        })
+        .then(res => {
+            setSGuides(res)
+        })
+        .catch(err => console.log(err));
+},[]);
+
+
+-----------------------------------Posting data------------------------------------
+const addEvent = () => {
+    setEvents(...events, {
+        
+    })
+    fetch("http://localhost:3200/events", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+    })
+}    
